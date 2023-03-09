@@ -1,0 +1,42 @@
+﻿@model OgrenciNotMvc.Models.Entity.Tbl_Notlar
+@{
+    ViewBag.Title = "Güncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    @Html.Label("Ogrenci")
+    @Html.TextBoxFor(x => x.Tbl_Ogrenciler.OgrenciAd, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ders")
+    @Html.TextBoxFor(x => x.Tbl_Dersler.DersAd, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sınav 1")
+    @Html.TextBoxFor(x => x.Sinav1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sınav 2")
+    @Html.TextBoxFor(x => x.Sinav2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sınav 3")
+    @Html.TextBoxFor(x => x.Sinav3, new { @class = "form-control" })
+    <br />
+    @Html.Label("Proje")
+    @Html.TextBoxFor(x => x.Proje, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ortalama")
+    @Html.TextBoxFor(x => x.Ortalama, new { @Value = @ViewBag.ort, @class = "form-control" })
+    <br />
+    @Html.Label("True")
+    @Html.RadioButtonFor(x => x.Durum, "True")
+    <br />
+    @Html.Label("False")
+    @Html.RadioButtonFor(x => x.Durum, "False")
+    @Html.HiddenFor(x => x.NotID)
+
+    <div>
+        <button type="submit" name="Islem" value="Hesapla" class="btn btn-default" style="margin-top:10px;">Hesapla</button>
+        <br />
+        <button type="submit" name="Islem" value="Güncelle" class="btn btn-primary" style="margin-top:10px;">Güncelle</button>
+    </div>
+</form>
+

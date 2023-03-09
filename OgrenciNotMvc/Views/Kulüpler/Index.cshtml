@@ -1,0 +1,32 @@
+﻿@using OgrenciNotMvc.Models.Entity;
+@model List<Tbl_Kulüpler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Kulüp Adı</th>
+            <th>Kontenjan Sayısı</th>
+            <th>İşlemler</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.KulüpID</td>
+                <td>@item.KulüpAd</td>
+                <td>@item.KulüpKontenjan</td>
+                <td>
+                    <a href="/Kulüpler/Sil/@item.KulüpID" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    <a href="/Kulüpler/Güncelle/@item.KulüpID" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="/Kulüpler/KulüpEkle" class="btn btn-primary">Kulüp Ekle</a>
+</form>
+

@@ -1,0 +1,26 @@
+﻿@model OgrenciNotMvc.Models.Entity.Tbl_Ogrenciler
+@{
+    ViewBag.Title = "Güncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    @Html.Label("Adı")
+    @Html.TextBoxFor(x => x.OgrenciAd, new { @class = "form-control" })
+    <br />
+    @Html.Label("Soyadı")
+    @Html.TextBoxFor(x => x.OgrenciSoyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fotoğraf")
+    @Html.TextBoxFor(x => x.OgrenciFotograf, new { @class = "form-control" })
+    <br />
+    @Html.Label("Cinsiyet")
+    @Html.TextBoxFor(x => x.OgrenciCinsiyet, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kulüp")
+    @Html.DropDownListFor(x => x.Tbl_Kulüpler.KulüpID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.OgrenciID)
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+

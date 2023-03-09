@@ -1,0 +1,32 @@
+﻿@model OgrenciNotMvc.Models.Entity.Tbl_Ogrenciler
+
+@{
+    ViewBag.Title = "OrenciEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Adı</label>
+        <input type="text" class="form-control" name="OgrenciAd" />
+    </div>
+    <div style="margin-top: 10px;">
+        <label>Soyadı</label>
+        <input type="text" class="form-control" name="OgrenciSoyad" />
+    </div>
+    <div style="margin-top: 10px;">
+        <label>Fotoğrafı</label>
+        <input type="text" class="form-control" name="OgrenciFotograf" />
+    </div>
+    <div style="margin-top: 10px;">
+        <label>Cinsiyeti</label>
+        <input type="text" class="form-control" name="OgrenciCinsiyet" />
+    </div>
+    <div style="margin-top: 10px;">
+        <label>Kulübü</label>
+        @Html.DropDownListFor(x => x.Tbl_Kulüpler.KulüpID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div style="margin-top: 10px;">
+        <button class="btn btn-primary">Ogrenci Ekle</button>
+    </div>
+</form>
